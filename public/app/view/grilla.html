@@ -1,72 +1,65 @@
-
-		<div class="row"> 
-			<div class="col-md-4"> 
-				<form class="form-horizontal">
-					<div class="form-group">
-						<label for="inputEmail3" class="col-sm-2 control-label">Nombre</label>
-						<div class="col-sm-10">
-							<input type="text" class="form-control" placeholder="ingrese el nombre"/>
-						</div>
-					</div>
-				</form>
-
-			</div>
-
-			<div class="col-md-4">	
-				<div class="dropdown pull-left">
-					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-						Temporada
-						<span class="caret"></span>
-					</button>
-					<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-						<li><a href="#">1</a></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">Something else here</a></li>
-						<li><a href="#">Separated link</a></li>
-					</ul>
-				</div>
-
-				<div class="dropdown pull-left" style="margin-left:5px;">
-					<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Capitulo
-						<span class="caret"></span>
-					</button>
-					<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-						<li><a href="#">Action</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else here</a></li>
-						<li><a href="#">Separated link</a></li>
-					</ul>
-				</div>
-
-			</div>
-
-			<div class="col-md-4 pull-right"> <button class="btn btn-default pull-right" type="submit">Agregar personaje</button></div>
-
-		</div>
-
-		<hr>
-
-		<div class="row" ng-controller="testController"> 
-			<div class="col-md-12"> 
-				<table class="table">
-					<tr>
-						<td class="active">Nombre</td>
-						<td class="active">Temporada</td>
-						<td class="active">Capitulo</td>
-						<td class="active"><a href="#">borrar</a> <a href="#">detalle</a></td>
-					</tr>
-					<tr ng-repeat="client in clients">
-						<td class="active">{{client.surname}}, {{client.name}}</td>
-						<td class="active">...</td>
-						<td class="active">...</td>
-						<td class="active">...</td>
-					</tr>
-					<tr>
-						<td class="active">...</td>
-						<td class="active">...</td>
-						<td class="active">...</td>
-						<td class="active">...</td>
-					</tr>
-				</table>
-			</div>
-		</div>
+    <div class="container">
+    	<div class="row"> 
+    		<div class="col-md-4"> 
+    			<form class="form-horizontal">
+    				<div class="form-group">
+    					<label for="inputEmail3" class="col-sm-2 control-label">Nombre</label>
+    					<div class="col-sm-10">
+    						<input type="text" class="form-control" placeholder="ingrese el nombre"/>
+    					</div>
+    				</div>
+    			</form>
+    		</div>
+    		<div class="col-md-4">	
+    			<div class="dropdown pull-left">
+    				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    					Temporada
+    					<span class="caret"></span>
+    				</button>
+    				<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    					<li><a href="#">1</a></li>
+    					<li><a href="#">2</a></li>
+    					<li><a href="#">Something else here</a></li>
+    					<li><a href="#">Separated link</a></li>
+    				</ul>
+    			</div>
+    			<div class="dropdown pull-left" style="margin-left:5px;">
+    				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Capitulo
+    					<span class="caret"></span>
+    				</button>
+    				<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    					<li><a href="#">Action</a></li>
+    					<li><a href="#">Another action</a></li>
+    					<li><a href="#">Something else here</a></li>
+    					<li><a href="#">Separated link</a></li>
+    				</ul>
+    			</div>
+    		</div>
+    		<div class="col-md-4 pull-right"> <form action="#/formulario"><button ng-click="insertClients()" class="btn btn-default pull-right" type="submit">Agregar personaje</button></form></div>
+    	</div>
+    	<hr>
+    	<div class="row" ng-controller="testController"> 
+    		<div class="col-md-12"> 
+    			<table class="table">
+    				<tr>
+    					<td class="active">Nombre</td>
+    					<td class="active">Temporada</td>
+    					<td class="active">Capitulo</td>
+    					<td class="active"><a href="#">borrar</a> <a href="#/detalle">detalle</a></td>
+    				</tr>
+    				<tr ng-repeat="client in clients">
+    					<td class="active">{{client.surname}}, {{client.name}}</td>
+    					<td class="active">...</td>
+    					<td class="active">...</td>
+    					<td class="active">...</td>
+    				</tr>
+    				<tr>
+    					<td class="active">...</td>
+    					<td class="active">...</td>
+    					<td class="active">...</td>
+    					<td class="active">...</td>
+    				</tr>
+    			</table>
+    		</div>
+    	</div>
+    </div>

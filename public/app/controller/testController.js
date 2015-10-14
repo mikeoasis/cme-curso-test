@@ -1,11 +1,29 @@
 // todos los controllers que declaren los agregan en este archivo a o como lo llamen
+app.controller("testController", ["$scope","DbService", 
+	function($scope,DbService)
+	 {/*
+	 	 DbService.getData().success(function(data){
+	 		$scope.clients = data;	
+	 	});*/
 
-app.controller("testController", function($scope) {
-	$scope.clients = [
+     $scope.clients = DbService.getData();
 
-			{"surname": "Settecasse", "name": "Mike"},
-			{"surname": "Morralla", "name": "Maria"}
+     
+     $scope.insertClients = function () {
+        var firstName = $scope.clients.firstName;
+        var lastName = $scope.clients.lastName;
+        var city = $scope.clients.city;
 
-	];
+        clientsService.insertClients(firstName, lastName, city);
+        $scope.clients.firstName = '';
+        $scope.clients.lastName = '';
+        $scope.clients.city = '';
 
-});
+    };
+
+
+
+
+     }]);
+
+     

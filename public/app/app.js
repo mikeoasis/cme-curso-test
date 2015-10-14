@@ -1,3 +1,3 @@
 //va el module
-var app = angular.module('myapp', ['ngRoute']);
+var app = angular.module("myApp", ['ngRoute']);
 
