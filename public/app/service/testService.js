@@ -2,35 +2,38 @@
 app.service("DbService", function()
 {
 	this.getData = function(){
-		return clients;
+		return characters;
 	};
-	this.insertClients = function (firstName, lastName, city) {
-		var topID = clients.length + 1;
-		clients.push({
+	this.insertCharacters = function (firstName, lastName, season, chapter) {
+		console.log(firstName);
+		var topID = characters.length + 1;
+		characters.push({
 			id: topID,
 			firstName: firstName,
 			lastName: lastName,
-			city: city
+			season: season,
+			chapter: chapter
 		});
 	};
-	this.deleteClients = function (id) {
-		for (var i = clients.length - 1; i >= 0; i--) {
-			if (clients[i].id === id) {
-				clients.splice(i, 1);
+	this.deleteCharacters = function (id) {
+		console.log(id);
+		for (var i = characters.length - 1; i >= 0; i--) {
+			if (characters[i].id === id) {
+				characters.splice(i, 1);
 				break;
 			}
 		}
 	};
-	this.getClients = function (id) {
-		for (var i = 0; i < clients.length; i++) {
-			if (clients[i].id === id) {
-				return clients[i];
+	this.getCharacters = function (id) {
+		for (var i = 0; i < characters.length; i++) {
+			if (characters[i].id === id) {
+				return characters[i];
 			}
 		}
 		return null;
 	};
-	var clients = [
-	{"id": "", "firstName": "Jon","lastName":"Snow","city":"Mendoza"},
-	{"id": "", "firstName": "Sansa","lastName":"Stark","city":"Mendoza"}
+	var characters = [
+	{"id": "1", "firstName": "Jon","lastName":"Snow","season":"1","chapter":"1"},
+	{"id": "2", "firstName": "Sansa","lastName":"Stark","season":"1","chapter":"1"}
 	];
 });

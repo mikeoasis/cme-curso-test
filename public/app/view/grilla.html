@@ -35,29 +35,25 @@
     				</ul>
     			</div>
     		</div>
-    		<div class="col-md-4 pull-right"> <form action="#/formulario"><button ng-click="insertClients()" class="btn btn-default pull-right" type="submit">Agregar personaje</button></form></div>
+    		<div class="col-md-4 pull-right"> <form action="#/formulario"><button  class="btn btn-default pull-right" type="submit">Agregar personaje</button></form></div>
     	</div>
     	<hr>
     	<div class="row" ng-controller="testController"> 
     		<div class="col-md-12"> 
     			<table class="table">
     				<tr>
+    				    <td class="active">id</td>
     					<td class="active">Nombre</td>
     					<td class="active">Temporada</td>
     					<td class="active">Capitulo</td>
     					<td class="active"><a href="#">borrar</a> <a href="#/detalle">detalle</a></td>
     				</tr>
-    				<tr ng-repeat="client in clients">
-    					<td class="active">{{client.surname}}, {{client.name}}</td>
+    				<tr ng-repeat="character in characters">
+    				    <td class="active" ng-model="id">{{character.id}}</td>
+    					<td class="active">{{character.firstName}}, {{character.lastName}}</td>
     					<td class="active">...</td>
     					<td class="active">...</td>
-    					<td class="active">...</td>
-    				</tr>
-    				<tr>
-    					<td class="active">...</td>
-    					<td class="active">...</td>
-    					<td class="active">...</td>
-    					<td class="active">...</td>
+    					<td class="active"><a ng-click="deleteCharacters(id)" href="#/grilla">borrar</a> <a href="#/detalle">detalle</a></td>
     				</tr>
     			</table>
     		</div>
